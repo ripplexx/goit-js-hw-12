@@ -1,0 +1,170 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #0f0f1a;
+  color: #ffffff;
+  padding: 30px 20px;
+  min-height: 100vh;
+}
+
+/* ── Arama Formu ── */
+.search-form {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+
+.search-form input {
+  width: 420px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #333;
+  border-radius: 30px;
+  background-color: #1a1a2e;
+  color: #fff;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+.search-form input:focus {
+  border-color: #7c6af7;
+}
+
+.search-form input::placeholder {
+  color: #666;
+}
+
+.search-form button {
+  padding: 12px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #7c6af7, #4e75ff);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.search-form button:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(124, 106, 247, 0.5);
+}
+
+/* ── Loader ── */
+.loader {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border: 5px solid #333;
+  border-top-color: #7c6af7;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  margin: 30px auto;
+}
+
+.hidden {
+  display: none !important;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Galeri ── */
+.gallery {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+/* ── Kart ── */
+.gallery-item {
+  width: 340px;
+  border-radius: 16px;
+  overflow: hidden;
+  background: #1a1a2e;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.4s ease both;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 30px rgba(124, 106, 247, 0.4);
+}
+
+.gallery-link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
+.gallery-image {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.4s;
+}
+
+.gallery-item:hover .gallery-image {
+  transform: scale(1.07);
+}
+
+/* ── İstatistikler ── */
+.info {
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 8px;
+  font-size: 13px;
+  color: #aaa;
+  background: #16213e;
+}
+
+.info p {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+/* ── Load More Butonu ── */
+.load-more {
+  display: block;
+  margin: 40px auto 20px auto;
+  padding: 12px 32px;
+  font-size: 16px;
+  font-weight: bold;
+  background: linear-gradient(135deg, #7c6af7, #4e75ff);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.load-more:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 20px rgba(124, 106, 247, 0.5);
+}
+
+/* ── Kart giriş animasyonu ── */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
